@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MiniPalette from "../MiniPalette/MiniPalette";
 import { withStyles } from "@material-ui/styles";
+import chroma from "chroma-js";
 
 const styles = {
   root: {
