@@ -1,5 +1,4 @@
 import chroma from "chroma-js";
-
 export default {
   ColorBox: {
     width: "20%",
@@ -62,9 +61,9 @@ export default {
     left: "0px",
     bottom: "0px",
     padding: "10px",
-    color: " black",
+    color: "black",
     letterSpacing: "1px",
-    textTransform: "",
+    textTransform: "uppercase",
     fontSize: "12px",
   },
   copyOverlay: {
@@ -72,7 +71,7 @@ export default {
     zIndex: "0",
     width: "100%",
     height: "100%",
-    transition: " transform 0.6s ease-in-out",
+    transition: "transform 0.6s ease-in-out",
     transform: "scale(0.1)",
   },
   showOverlay: {
