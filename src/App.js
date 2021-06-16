@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import Palette from "./components/Palette/Palette";
 import PaletteList from "./components/PaletteList/PaletteList";
 import SingleColorPalette from "./components/SingleColorPalette/SingleColorPalette";
 import NewPaletteForm from "./components/NewPaletteForm/NewPaletteForm";
-import seedColors from "./seedColors";
+
 import { generatePalette } from "./colorHelpers";
 import "./App.css";
+
+import seedColors from "./seedColors";
 import Page from "./Page.js";
 class App extends Component {
   constructor(props) {
@@ -15,11 +18,11 @@ class App extends Component {
     const savedPalettes = JSON.parse(window.localStorage.getItem("palettes"));
     this.state = { palettes: savedPalettes || seedColors };
     this.savePalette = this.savePalette.bind(this);
-    this.deletePalette = this.deletePalette.bind(this);
     this.findPalette = this.findPalette.bind(this);
+    this.deletePalette = this.deletePalette.bind(this);
   }
   findPalette(id) {
-    return seedColors.find((palette) => {
+    return this.state.palettes.find(function (palette) {
       return palette.id === id;
     });
   }
@@ -116,7 +119,7 @@ class App extends Component {
                       />
                     </Page>
                   )}
-                />
+                />{" "}
               </Switch>
             </CSSTransition>
           </TransitionGroup>

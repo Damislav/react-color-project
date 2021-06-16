@@ -5,7 +5,6 @@ import { ChromePicker } from "react-color";
 import { withStyles } from "@material-ui/core";
 import styles from "../styles/ColorPickerStyles";
 
-
 class ColorPickerForm extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +50,11 @@ class ColorPickerForm extends Component {
           onChangeComplete={this.updateCurrentColor}
           className={classes.picker}
         />
-        <ValidatorForm onSubmit={this.handleSubmit} ref="form">
+        <ValidatorForm
+          onSubmit={this.handleSubmit}
+          ref="form"
+          instantValidate={false}
+        >
           <TextValidator
             value={newColorName}
             className={classes.colorNameInput}
