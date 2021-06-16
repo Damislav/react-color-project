@@ -48,18 +48,16 @@ class PaletteList extends Component {
       <div className={classes.root}>
         <div className={classes.container}>
           <nav className={classes.nav}>
-            <h1>React Colors</h1>
+            <h1 className={classes.heading}>React Colors</h1>
             <Link to="/palette/new">Create Palette</Link>
           </nav>
-
           <TransitionGroup className={classes.palettes}>
             {palettes.map((palette) => (
-              <CSSTransition classNames="fade" timeout={500} key={palette.id}>
+              <CSSTransition key={palette.id} classNames="fade" timeout={500}>
                 <MiniPalette
                   {...palette}
-                  handleClick={() => this.goToPalette(palette.id)}
-                  handleDelete={this.openDialog}
-                  // handleDelete={this.props.deletePalette}
+                  goToPalette={this.goToPalette}
+                  openDialog={this.openDialog}
                   key={palette.id}
                   id={palette.id}
                 />
