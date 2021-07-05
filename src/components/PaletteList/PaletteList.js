@@ -93,7 +93,7 @@ class PaletteList extends Component {
               <ListItemText primary="Cancel" />
             </ListItem>
           </List>
-        </Dialog>
+        </Dialog>{" "}
       </div>
     );
   }
