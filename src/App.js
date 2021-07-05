@@ -12,6 +12,7 @@ import "./App.css";
 
 import seedColors from "./seedColors";
 import Page from "./Page.js";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -82,7 +83,7 @@ class App extends Component {
                       />
                     </Page>
                   )}
-                />
+                />{" "}
                 <Route
                   exact
                   path="/"
